@@ -1,4 +1,5 @@
 import { fireEvent, render, screen } from '@testing-library/react';
+import Post from '.';
 import PostComment from '.';
 
 describe('Teste para o componente PostComment', () => {
@@ -7,7 +8,7 @@ describe('Teste para o componente PostComment', () => {
         expect(screen.getByText('Comentar')).toBeInTheDocument();
     });
 
-    it('Vai adicionar os dois comentários', () => {
+    it('Deve adicionar dois comentários', () => {
         render(<PostComment/>);
 
         fireEvent.change(screen.getByTestId('comment-textarea'), {
